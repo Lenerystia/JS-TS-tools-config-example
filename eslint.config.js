@@ -27,74 +27,6 @@ import promise from 'eslint-plugin-promise';
 export default [
 	prettier,
 	{
-		name: 'eslinting eslint',
-		files: ['eslint.config.js'],
-		plugins: {
-			esEs
-		},
-		rules: {
-			'esEs/consistent-output': 'error',
-			'esEs/fixer-return': 'error',
-			'esEs/meta-property-ordering': 'error',
-			'esEs/no-deprecated-context-methods': 'error',
-			'esEs/no-deprecated-report-api': 'error',
-			'esEs/no-meta-schema-default': 'error',
-			'esEs/no-missing-message-ids': 'error',
-			'esEs/no-missing-placeholders': 'error',
-			'esEs/no-property-in-node': 'error',
-			'esEs/no-unused-message-ids': 'error',
-			'esEs/no-unused-placeholders': 'error',
-			'esEs/no-useless-token-range': 'error',
-			'esEs/prefer-message-ids': 'error',
-			'esEs/prefer-object-rule': 'error',
-			'esEs/prefer-placeholders': 'error',
-			'esEs/prefer-replace-text': 'error',
-			'esEs/report-message-format': 'error',
-			'esEs/require-meta-default-options': 'error',
-			'esEs/require-meta-docs-description': 'error',
-			'esEs/require-meta-docs-recommended': 'error',
-			'esEs/require-meta-docs-url': 'error',
-			'esEs/require-meta-fixable': 'error',
-			'esEs/require-meta-has-suggestions': 'error',
-			'esEs/require-meta-schema': 'error',
-			'esEs/require-meta-schema-description': 'error',
-			'esEs/require-meta-type': 'error',
-			'esEs/no-identical-tests': 'error',
-			'esEs/no-only-tests': 'error',
-			'esEs/prefer-output-null': 'error',
-			'esEs/test-case-property-ordering': 'error',
-			'esEs/test-case-shorthand-strings': 'error'
-		}
-	},
-	{
-		name: 'HTML',
-		files: ['**/*.html'],
-		ignores: [
-			'.svelte-kit/**',
-			'**/fixtures',
-			'node_modules',
-			'build',
-			'.svelte-kit',
-			'package-lock.json',
-			'build/',
-			'src/tests/',
-			'.svelte-kit/',
-			'svelte.config.js',
-			'vite.config.ts',
-			'eslint.config.js'
-		],
-		languageOptions: {
-			parser: htmlParser
-		},
-		plugins: {
-			'@html-eslint': html
-		},
-		rules: {
-			/* html rules */
-			...html.configs.recommended.rules
-		}
-	},
-	{
 		files: ['**/*.{ts,tsx,js,jsx,cjs,mjs,svelte}'],
 		ignores: [
 			'.svelte-kit/**',
@@ -108,7 +40,8 @@ export default [
 			'.svelte-kit/',
 			'svelte.config.js',
 			'vite.config.ts',
-			'eslint.config.js'
+			'eslint.config.js',
+			'drizzle.config.ts',
 		],
 		languageOptions: {
 			parser: svelteParser,
@@ -146,11 +79,11 @@ export default [
 			}
 		},
 		rules: {
-			/* tailwind rules */
-			'tailwind/classnames-order': 'error',
+			// /* tailwind rules */
+			// 'tailwind/classnames-order': 'error',
 
-			/* pandacss rules */
-			'@pandacss/file-not-included': 'error',
+			// /* pandacss rules */
+			// '@pandacss/file-not-included': 'error',
 
 			/* promise rules */
 			'promise/always-return': 'error',
@@ -257,7 +190,7 @@ export default [
 			// ...js.configs.recommended.rules,
 
 			/* Svelte rules */
-			...svelte.configs.recommended.rules,
+			...svelte.configs.all.rules,
 			...svelte.configs.prettier.rules,
 			'svelte/no-at-html-tags': 'error',
 			'svelte/valid-compile': 'error',
@@ -332,7 +265,8 @@ export default [
 
 			/* TypeScript rules */
 			// ...ts.configs.recommended.rules,
-			...ts.configs.strict.rules,
+			// ...ts.configs.strict.rules,
+			...ts.configs.all.rules,
 			// ...ts.configs.recommendedTypeChecked.rules, //sorry, but in for this config - it doesn't work
 
 			/* Not configurable */
@@ -665,6 +599,74 @@ export default [
 			'vitest/valid-expect': ['error', { maxArgs: 1 }],
 			'vitest/valid-title': 'error',
 			'vitest/valid-expect-in-promise': 'error'
+		}
+	},
+	{
+		name: 'eslinting eslint',
+		files: ['eslint.config.js'],
+		plugins: {
+			esEs
+		},
+		rules: {
+			'esEs/consistent-output': 'error',
+			'esEs/fixer-return': 'error',
+			'esEs/meta-property-ordering': 'error',
+			'esEs/no-deprecated-context-methods': 'error',
+			'esEs/no-deprecated-report-api': 'error',
+			'esEs/no-meta-schema-default': 'error',
+			'esEs/no-missing-message-ids': 'error',
+			'esEs/no-missing-placeholders': 'error',
+			'esEs/no-property-in-node': 'error',
+			'esEs/no-unused-message-ids': 'error',
+			'esEs/no-unused-placeholders': 'error',
+			'esEs/no-useless-token-range': 'error',
+			'esEs/prefer-message-ids': 'error',
+			'esEs/prefer-object-rule': 'error',
+			'esEs/prefer-placeholders': 'error',
+			'esEs/prefer-replace-text': 'error',
+			'esEs/report-message-format': 'error',
+			'esEs/require-meta-default-options': 'error',
+			'esEs/require-meta-docs-description': 'error',
+			'esEs/require-meta-docs-recommended': 'error',
+			'esEs/require-meta-docs-url': 'error',
+			'esEs/require-meta-fixable': 'error',
+			'esEs/require-meta-has-suggestions': 'error',
+			'esEs/require-meta-schema': 'error',
+			'esEs/require-meta-schema-description': 'error',
+			'esEs/require-meta-type': 'error',
+			'esEs/no-identical-tests': 'error',
+			'esEs/no-only-tests': 'error',
+			'esEs/prefer-output-null': 'error',
+			'esEs/test-case-property-ordering': 'error',
+			'esEs/test-case-shorthand-strings': 'error'
+		}
+	},
+	{
+		name: 'HTML',
+		files: ['**/*.html'],
+		ignores: [
+			'.svelte-kit/**',
+			'**/fixtures',
+			'node_modules',
+			'build',
+			'.svelte-kit',
+			'package-lock.json',
+			'build/',
+			'src/tests/',
+			'.svelte-kit/',
+			'svelte.config.js',
+			'vite.config.ts',
+			'eslint.config.js'
+		],
+		languageOptions: {
+			parser: htmlParser
+		},
+		plugins: {
+			'@html-eslint': html
+		},
+		rules: {
+			/* html rules */
+			...html.configs.recommended.rules
 		}
 	},
 ];
