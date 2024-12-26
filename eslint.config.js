@@ -14,17 +14,88 @@ import functional from 'eslint-plugin-functional';
 import security from 'eslint-plugin-security';
 import sonarjs from 'eslint-plugin-sonarjs';
 import alias from 'eslint-plugin-import-alias';
-import css from 'eslint-plugin-css';
 import html from '@html-eslint/eslint-plugin';
-// import htmlParser from '@html-eslint/parser';
+import htmlParser from '@html-eslint/parser';
+import drizzle from 'eslint-plugin-drizzle';
+import esEs from 'eslint-plugin-eslint-plugin';
+import promise from 'eslint-plugin-promise';
+// import panda from '@pandacss/eslint-plugin';
+// import tailwind from 'eslint-plugin-tailwindcss';
 
-// import prettierOrgImp from 'prettier-plugin-organize-imports'; - Just in .prettierrc add to plugins
-// import esEsCom from 'eslint-plugin-eslint-comments'
+// optimize imports in WebStorm - ctrl + alt + o
 
 export default [
 	prettier,
 	{
-		files: ['**/*.{ts,tsx,js,jsx,cjs,mjs,svelte,css,html}'],
+		name: 'eslinting eslint',
+		files: ['eslint.config.js'],
+		plugins: {
+			esEs
+		},
+		rules: {
+			'esEs/consistent-output': 'error',
+			'esEs/fixer-return': 'error',
+			'esEs/meta-property-ordering': 'error',
+			'esEs/no-deprecated-context-methods': 'error',
+			'esEs/no-deprecated-report-api': 'error',
+			'esEs/no-meta-schema-default': 'error',
+			'esEs/no-missing-message-ids': 'error',
+			'esEs/no-missing-placeholders': 'error',
+			'esEs/no-property-in-node': 'error',
+			'esEs/no-unused-message-ids': 'error',
+			'esEs/no-unused-placeholders': 'error',
+			'esEs/no-useless-token-range': 'error',
+			'esEs/prefer-message-ids': 'error',
+			'esEs/prefer-object-rule': 'error',
+			'esEs/prefer-placeholders': 'error',
+			'esEs/prefer-replace-text': 'error',
+			'esEs/report-message-format': 'error',
+			'esEs/require-meta-default-options': 'error',
+			'esEs/require-meta-docs-description': 'error',
+			'esEs/require-meta-docs-recommended': 'error',
+			'esEs/require-meta-docs-url': 'error',
+			'esEs/require-meta-fixable': 'error',
+			'esEs/require-meta-has-suggestions': 'error',
+			'esEs/require-meta-schema': 'error',
+			'esEs/require-meta-schema-description': 'error',
+			'esEs/require-meta-type': 'error',
+			'esEs/no-identical-tests': 'error',
+			'esEs/no-only-tests': 'error',
+			'esEs/prefer-output-null': 'error',
+			'esEs/test-case-property-ordering': 'error',
+			'esEs/test-case-shorthand-strings': 'error'
+		}
+	},
+	{
+		name: 'HTML',
+		files: ['**/*.html'],
+		ignores: [
+			'.svelte-kit/**',
+			'**/fixtures',
+			'node_modules',
+			'build',
+			'.svelte-kit',
+			'package-lock.json',
+			'build/',
+			'src/tests/',
+			'.svelte-kit/',
+			'svelte.config.js',
+			'vite.config.ts',
+			'eslint.config.js'
+		],
+		languageOptions: {
+			parser: htmlParser
+		},
+		plugins: {
+			'@html-eslint': html
+		},
+		rules: {
+			/* html rules */
+			...html.configs.recommended.rules
+		}
+	},
+	{
+		files: ['**/*.{ts,tsx,js,jsx,cjs,mjs,svelte}'],
 		ignores: [
 			'.svelte-kit/**',
 			'**/fixtures',
@@ -45,29 +116,27 @@ export default [
 				parser: tsParser,
 				project: './tsconfig.json',
 				extraFileExtensions: ['.svelte'],
-				//Co podpowiedział GPT
-				// tsconfigRootDir: process.cwd(),
-				//Co było zerżnięte z internetu z jakiegoś przykładu
 				tsconfigRootDir: import.meta.dirname
-				// TODO: Jaka to różnica?
 			}
 		},
 		plugins: {
+			'@typescript-eslint': ts,
+			'@stylistic': stylistic,
+			// '@pandacss': panda,
+			// tailwind,
 			tsdoc,
 			unicorn,
 			svelte,
-			'@typescript-eslint': ts,
 			perfectionist,
-			'@stylistic': stylistic ,
 			js,
 			functional,
 			sonarjs,
-			'@html-eslint': html,
-			css, // additional for future
+			promise,
 			// Don't know why some plugins need write as below, and for some plugins it is enough to write as above
+			drizzle: drizzle,
 			import: esImport,
 			security: security,
-			alias: alias,
+			alias: alias
 		},
 		settings: {
 			'import/resolver': {
@@ -77,22 +146,44 @@ export default [
 			}
 		},
 		rules: {
-			/* html rules */
-			...html.configs.recommended.rules,
-			'@html-eslint/require-lang': 'error',
+			/* tailwind rules */
+			'tailwind/classnames-order': 'error',
 
-			/* css rules */
-			// ...css.configs.all.rules,
+			/* pandacss rules */
+			'@pandacss/file-not-included': 'error',
+
+			/* promise rules */
+			'promise/always-return': 'error',
+			'promise/no-return-wrap': 'error',
+			'promise/param-names': 'error',
+			'promise/catch-or-return': 'error',
+			'promise/no-native': 'error',
+			'promise/no-nesting': 'error',
+			'promise/no-promise-in-callback': 'error',
+			'promise/no-callback-in-promise': 'error',
+			'promise/avoid-new': 'error',
+			'promise/no-new-statics': 'error',
+			'promise/no-return-in-finally': 'error',
+			'promise/valid-params': 'error',
+			'promise/no-multiple-resolved': 'error',
+			'promise/prefer-await-to-callbacks': 'error',
+			'promise/prefer-await-to-then': 'error',
+			'promise/prefer-catch': 'error',
+			'promise/spec-only': 'error',
+
+			/* drizzle rules */
+			'drizzle/enforce-delete-with-where': 'error',
+			'drizzle/enforce-update-with-where': 'error',
 
 			/* alias rules */
 			'alias/import-alias': [
-				"error",
+				'error',
 				{
-					"relativeDepth": 0,
-					"aliases": [
-						{ "alias": "@src", "matcher": "^src" }, // src/modules/app/test -> @src/modules/app/test
-						{ "alias": "@test", "matcher": "^test/unit" }, // test/unit/modules/app -> @test/modules/app
-						{ "alias": "@testRoot", "matcher": "^(test)/e2e" } // test/e2e/modules/app -> @testRoot/e2e/modules/app
+					relativeDepth: 0,
+					aliases: [
+						{ alias: '@src', matcher: '^src' }, // src/modules/app/test -> @src/modules/app/test
+						{ alias: '@test', matcher: '^test/unit' }, // test/unit/modules/app -> @test/modules/app
+						{ alias: '@testRoot', matcher: '^(test)/e2e' } // test/e2e/modules/app -> @testRoot/e2e/modules/app
 					]
 				}
 			],
@@ -127,19 +218,13 @@ export default [
 			'import/no-restricted-paths': [
 				'error',
 				{
-					zones: [
-						{ target: './src', from: './node_modules' }
-					]
+					zones: [{ target: './src', from: './node_modules' }]
 				}
 			],
 			'import/order': [
 				'warn',
 				{
-					groups: [
-						['builtin', 'external'],
-						['internal'],
-						['parent', 'sibling', 'index']
-					],
+					groups: [['builtin', 'external'], ['internal'], ['parent', 'sibling', 'index']],
 					pathGroups: [
 						{
 							pattern: '@/**',
@@ -158,10 +243,7 @@ export default [
 			'import/no-extraneous-dependencies': [
 				'error',
 				{
-					devDependencies: [
-						'**/*.test.ts',
-						'**/scripts/**'
-					]
+					devDependencies: ['**/*.test.ts', '**/scripts/**']
 				}
 			],
 			/* Tsdoc */
@@ -584,5 +666,5 @@ export default [
 			'vitest/valid-title': 'error',
 			'vitest/valid-expect-in-promise': 'error'
 		}
-	}
+	},
 ];
