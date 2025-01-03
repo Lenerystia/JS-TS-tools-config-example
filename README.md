@@ -9,7 +9,7 @@ This project is only example config files - there are not project to coding.
 
 ## Tools
 ```
-npm install eslint prettier husky lint-staged
+npm install eslint prettier husky lint-staged cspell
 ```
 
 ## Eslint plugins
@@ -60,7 +60,7 @@ npm install --save-dev eslint-plugin-perfectionist eslint-plugin-unicorn @stylis
 
 ### Security & Quality
 ```
-npm install --save-dev eslint-plugin-security eslint-plugin-sonarjs eslint-plugin-tsdoc eslint-plugin-promise
+npm install --save-dev eslint-plugin-security eslint-plugin-sonarjs eslint-plugin-tsdoc eslint-plugin-promise @cspell/eslint-plugin
 ```
 
 ### Import Management
