@@ -1,4 +1,4 @@
-# eslint-ultimate-config
+# JS/TS ultimate config - selected tools
 Simple, flat eslint setup with all popular (at the moment only needed by me) plugins that can be turned on and off. Everything in one file, just copy paste to your project.
 
 This project is only example config files - there are not project to coding.
