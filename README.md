@@ -3,25 +3,6 @@ Simple, flat eslint setup with all popular (at the moment only needed by me) plu
 
 This project is only example config files - there are not project to coding.
 
-Now contains:
-- svelte
-- svelteParser
-- perfectionist
-- typescript
-- unicorn
-- stylistic
-- eslint/js
-- prettier
-- vitest
-- tsdoc
-- import
-- functional
-- security
-- sonarjs
-- import-alias
-- css
-- html
-
 # What you need?
 
 ## Tools
