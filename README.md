@@ -5,11 +5,17 @@ Flat eslint setup plugins that can be turned on and off.
 
 This project is only example config files - there are not project to coding.
 
-# What you need?
+# Included Tools
+- **ESLint**: For linting JavaScript and TypeScript.
+- **Prettier**: For code formatting.
+- **Husky**: To run Git hooks.
+- **lint-staged**: To lint files before committing.
+- **Stylelint (optional)**: For linting CSS/SCSS.
 
+# Installation
 ## Tools
 ```
-npm install eslint prettier husky lint-staged cspell
+npm install --save-dev eslint prettier husky lint-staged cspell
 ```
 
 ## Eslint plugins
@@ -77,5 +83,3 @@ npm install --save-dev eslint-plugin-eslint-plugin
 ```
 npm install --save-dev stylelint stylelint-config-standard
 ```
-
-If you want some plugin just say!
