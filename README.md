@@ -11,6 +11,7 @@ This project is only example config files - there are not project to coding.
 - **Husky**: To run Git hooks.
 - **lint-staged**: To lint files before committing.
 - **Stylelint (optional)**: For linting CSS/SCSS.
+- **CSpell**: Spell Checker for Code 
 
 # Installation
 ## Tools
