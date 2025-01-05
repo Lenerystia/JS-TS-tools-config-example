@@ -10,7 +10,7 @@ This project only contains example configuration files - it is not a project for
 - **[Prettier](https://prettier.io/)**: For code formatting.
 - **[Husky](https://typicode.github.io/husky/)**: To run Git hooks.
 - **[lint-staged](https://github.com/okonet/lint-staged)**: To lint files before committing.
-- **[Stylelint](https://stylelint.io/)** (optional): For linting CSS/SCSS.
+- **[Stylelint](https://stylelint.io/)**: For linting CSS/SCSS.
 - **[CSpell](https://github.com/streetsidesoftware/cspell)**: Spell Checker for Code.
 - **[Commitlint](https://commitlint.js.org/)**: To enforce conventional commit messages.
 
