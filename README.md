@@ -87,6 +87,10 @@ npm install --save-dev eslint-plugin-security eslint-plugin-sonarjs eslint-plugi
 ```
 
 ### Import Management
+For managing and organizing imports effectively. Includes:
+- **[ESLint Plugin Import](https://github.com/import-js/eslint-plugin-import)**: Helps validate proper imports and exports, enforces consistent style, and prevents import errors.
+- **[ESLint Plugin Import Alias](https://www.npmjs.com/package/eslint-plugin-import-alias)**: Simplifies working with path aliases in your project.
+
 ```
 npm install --save-dev eslint-plugin-import eslint-plugin-import-alias
 ```
