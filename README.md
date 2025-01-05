@@ -6,17 +6,19 @@ Flat eslint setup plugins that can be turned on and off.
 This project is only example config files - there are not project to coding.
 
 # Included Tools
-- **ESLint**: For linting JavaScript and TypeScript.
-- **Prettier**: For code formatting.
-- **Husky**: To run Git hooks.
-- **lint-staged**: To lint files before committing.
-- **Stylelint (optional)**: For linting CSS/SCSS.
-- **CSpell**: Spell Checker for Code 
+- **[ESLint](https://eslint.org/)**: For linting JavaScript and TypeScript.
+- **[Prettier](https://prettier.io/)**: For code formatting.
+- **[Husky](https://typicode.github.io/husky/)**: To run Git hooks.
+- **[lint-staged](https://github.com/okonet/lint-staged)**: To lint files before committing.
+- **[Stylelint](https://stylelint.io/)** (optional): For linting CSS/SCSS.
+- **[CSpell](https://github.com/streetsidesoftware/cspell)**: Spell Checker for Code.
+- **[Commitlint](https://commitlint.js.org/)**: To enforce conventional commit messages.
 
 # Installation
 ## Tools
+### For Windows (if you want other look in source)
 ```
-npm install --save-dev eslint prettier husky lint-staged cspell
+npm install --save-dev eslint prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional
 ```
 
 ## Eslint plugins
