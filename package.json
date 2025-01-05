@@ -1,5 +1,5 @@
 {
-	"name": "name-of-your-app",
+	"name": "character-relationships-v2",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -8,6 +8,7 @@
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"spellcheck": "cspell --no-progress --dot \"**/*.{js,ts,jsx,tsx,cjs,mjs,json,html,xml,svg,css,scss,sass,md}\"",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"db:start": "docker compose up",
@@ -16,9 +17,14 @@
 		"db:studio": "drizzle-kit studio",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run",
-		"prepare": "husky"
+		"prepare": "husky",
+		"commitlint": "commitlint --edit"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^19.6.1",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@cspell/eslint-plugin": "^8.17.1",
+		"@faker-js/faker": "^9.3.0",
 		"@html-eslint/eslint-plugin": "^0.31.1",
 		"@html-eslint/parser": "^0.31.0",
 		"@pandacss/eslint-plugin": "^0.2.2",
@@ -31,6 +37,8 @@
 		"@types/eslint-plugin-security": "^3.0.0",
 		"@types/node": "^22.10.2",
 		"@vitest/eslint-plugin": "^1.1.20",
+		"commitlint": "^19.6.1",
+		"cspell": "^8.17.1",
 		"drizzle-kit": "^0.22.0",
 		"eslint": "^9.16.0",
 		"eslint-config-prettier": "^9.1.0",
@@ -80,7 +88,8 @@
 	"lint-staged": {
 		"*.{ts,svelte}": [
 			"eslint --fix",
-			"prettier --write"
+			"prettier --write",
+			"spellcheck"
 		],
 		"*.css": [
 			"prettier --write",
