@@ -32,7 +32,7 @@ npm install --save-dev @eslint/js
 npm install --save-dev typescript-eslint typescript
 ```
 
-### [Framework: Svelte](https://github.com/sveltejs/eslint-plugin-svelte)
+### [Svelte](https://github.com/sveltejs/eslint-plugin-svelte)
 ```
 npm install --save-dev svelte-eslint-parser eslint-plugin-svelte prettier-plugin-svelte
 ```
@@ -42,22 +42,22 @@ npm install --save-dev svelte-eslint-parser eslint-plugin-svelte prettier-plugin
 npm install --save-dev @html-eslint/parser @html-eslint/eslint-plugin
 ```
 
-### [Framework: Tailwind CSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss)
+### [Tailwind CSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss)
 ```
 npm install --save-dev eslint-plugin-tailwindcss
 ```
 
-### [Framework: PandaCSS](https://github.com/chakra-ui/eslint-plugin-panda)
+### [PandaCSS](https://github.com/chakra-ui/eslint-plugin-panda)
 ```
 npm install --save-dev  @pandacss/eslint-plugin
 ```
 
-### [Framework: Drizzle ORM](https://orm.drizzle.team/docs/eslint-plugin)
+### [Drizzle ORM](https://orm.drizzle.team/docs/eslint-plugin)
 ```
 npm install --save-dev eslint-plugin-drizzle
 ```
 
-### [Framework: Vitest](https://github.com/vitest-dev/eslint-plugin-vitest)
+### [Vitest](https://github.com/vitest-dev/eslint-plugin-vitest)
 ```
 npm install --save-dev @vitest/eslint-plugin
 ```
