@@ -21,6 +21,11 @@ This project is only example config files - there are not project to coding.
 npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional
 ```
 
+## [Stylelint](https://stylelint.io/)
+```
+npm install --save-dev stylelint stylelint-config-standard
+```
+
 ## Eslint plugins
 ### [Eslint JS](https://eslint.org/)
 ```
@@ -102,9 +107,4 @@ npm install --save-dev eslint-plugin-import eslint-plugin-import-alias
 ### [Meta Plugins](https://www.npmjs.com/package/eslint-plugin-eslint-plugin)
 ```
 npm install --save-dev eslint-plugin-eslint-plugin
-```
-
-## [Stylelint](https://stylelint.io/)
-```
-npm install --save-dev stylelint stylelint-config-standard
 ```
