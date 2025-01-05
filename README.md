@@ -1,9 +1,9 @@
 # JS/TS ultimate config - selected tools
 Simple setup with needed by me (possibly in the future for all popular tools) plugins/tools. Everything in one file, just copy paste to your project.
 
-Flat eslint setup plugins that can be turned on and off. If you need only eslint config -> [there](https://github.com/Lenerystia/eslint-ultimate-config)
+Flat eslint setup plugins that can be turned on and off. If you need only eslint config -> [here](https://github.com/Lenerystia/eslint-ultimate-config)
 
-This project is only example config files - there are not project to coding.
+This project only contains example configuration files - it is not a project for coding.
 
 # Included Tools
 - **[ESLint](https://eslint.org/)**: For linting JavaScript and TypeScript.
@@ -26,7 +26,7 @@ npm install --save-dev eslint typescript prettier husky lint-staged cspell commi
 npm install --save-dev stylelint stylelint-config-standard
 ```
 
-## [Eslint plugins](https://github.com/Lenerystia/eslint-ultimate-config) <- (If you want list of all plugins, go there)
+## [Eslint plugins](https://github.com/Lenerystia/eslint-ultimate-config) <- (If you want list of all plugins, go here)
 ```
 npm install --save-dev @eslint/js typescript-eslint typescript svelte-eslint-parser eslint-plugin-svelte prettier-plugin-svelte @html-eslint/parser @html-eslint/eslint-plugin eslint-plugin-tailwindcss @pandacss/eslint-plugin eslint-plugin-drizzle @vitest/eslint-plugin eslint-plugin-perfectionist eslint-plugin-unicorn @stylistic/eslint-plugin eslint-plugin-functional eslint-config-prettier prettier-plugin-organize-imports eslint-plugin-security eslint-plugin-sonarjs eslint-plugin-tsdoc eslint-plugin-promise @cspell/eslint-plugin eslint-plugin-import eslint-plugin-import-alias eslint-plugin-eslint-plugin
 ```
