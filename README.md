@@ -18,7 +18,7 @@ This project is only example config files - there are not project to coding.
 ## Tools
 ### For Windows (if you want other look in source)
 ```
-npm install --save-dev eslint prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional
+npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional
 ```
 
 ## Eslint plugins
@@ -33,6 +33,10 @@ npm install --save-dev typescript-eslint typescript
 ```
 
 ### [Svelte](https://github.com/sveltejs/eslint-plugin-svelte)
+For linting and formatting Svelte files. Includes:
+- **[Svelte ESLint Parser](https://github.com/sveltejs/svelte-eslint-parser)**: Parses `.svelte` files for ESLint.
+- **[ESLint Plugin Svelte](https://github.com/sveltejs/eslint-plugin-svelte)**: Provides linting rules specific to Svelte.
+- **[Prettier Plugin Svelte](https://github.com/sveltejs/prettier-plugin-svelte)**: Enables Prettier to format Svelte files.
 ```
 npm install --save-dev svelte-eslint-parser eslint-plugin-svelte prettier-plugin-svelte
 ```
