@@ -1,4 +1,4 @@
-# JS/TS ultimate config - selected tools
+# JS/TS tools config example
 Simple setup with needed by me (possibly in the future for all popular tools) plugins/tools. Everything in one file, just copy paste to your project.
 
 Flat eslint setup plugins that can be turned on and off. If you need only eslint config -> [here](https://github.com/Lenerystia/eslint-ultimate-config)
