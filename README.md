@@ -13,12 +13,13 @@ This project only contains example configuration files - it is not a project for
 - **[Stylelint](https://stylelint.io/)**: For linting CSS/SCSS.
 - **[CSpell](https://github.com/streetsidesoftware/cspell)**: Spell Checker for Code.
 - **[Commitlint](https://commitlint.js.org/)**: To enforce conventional commit messages.
+- **[NPM check updates](https://www.npmjs.com/package/npm-check-updates)**: For updating your package.json dependencies to the latest versions.
 
 # Installation
 ## Tools
 ### For Windows (if you want other look in source)
 ```
-npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional
+npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional npm-check-updates
 ```
 
 ## [Stylelint](https://stylelint.io/)
@@ -28,5 +29,5 @@ npm install --save-dev stylelint stylelint-config-standard
 
 ## [Eslint plugins](https://github.com/Lenerystia/eslint-ultimate-config) <- (If you want list of all plugins, go here)
 ```
-npm install --save-dev @eslint/js typescript-eslint typescript svelte-eslint-parser eslint-plugin-svelte prettier-plugin-svelte @html-eslint/parser @html-eslint/eslint-plugin eslint-plugin-tailwindcss @pandacss/eslint-plugin eslint-plugin-drizzle @vitest/eslint-plugin eslint-plugin-perfectionist eslint-plugin-unicorn @stylistic/eslint-plugin eslint-plugin-functional eslint-config-prettier prettier-plugin-organize-imports eslint-plugin-security eslint-plugin-sonarjs eslint-plugin-tsdoc eslint-plugin-promise @cspell/eslint-plugin eslint-plugin-import eslint-plugin-import-alias eslint-plugin-eslint-plugin
+npm install --save-dev @eslint/js typescript-eslint typescript svelte-eslint-parser eslint-plugin-svelte prettier-plugin-svelte @html-eslint/parser @html-eslint/eslint-plugin eslint-plugin-tailwindcss @pandacss/eslint-plugin eslint-plugin-drizzle @vitest/eslint-plugin eslint-plugin-perfectionist eslint-plugin-unicorn @stylistic/eslint-plugin eslint-plugin-functional eslint-config-prettier prettier-plugin-organize-imports eslint-plugin-security eslint-plugin-sonarjs eslint-plugin-tsdoc eslint-plugin-promise @cspell/eslint-plugin eslint-plugin-import eslint-plugin-import-alias eslint-plugin-eslint-plugin 
 ```
