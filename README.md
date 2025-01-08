@@ -19,7 +19,7 @@ This project only contains example configuration files - it is not a project for
 ## Tools
 ### For Windows (if you want other look in source)
 ```
-npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional npm-check-updates stylelint stylelint-config-standard
+npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional commitlint-plugin-function-rules npm-check-updates stylelint stylelint-config-standard
 ```
 
 ## [Eslint plugins](https://github.com/Lenerystia/eslint-ultimate-config) <- (If you want list of all plugins, go here)
