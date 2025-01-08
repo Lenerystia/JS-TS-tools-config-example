@@ -20,7 +20,8 @@
 		"prepare": "husky",
 		"commitlint": "commitlint --edit",
 		"list-outdated-dependencies": "npm-check-updates --format repo,group --peer",
-		"update-dependencies": "npm run list-outdated-dependencies -- -u && npm install"
+		"update-dependencies": "npm run list-outdated-dependencies -- -u && npm install && npm update && npm dedupe && npm run autofix && npm run release",
+        "clean": "rimraf node_modules coverage dist"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^19.6.1",
@@ -40,6 +41,7 @@
 		"@types/node": "^22.10.2",
 		"@vitest/eslint-plugin": "^1.1.20",
 		"commitlint": "^19.6.1",
+		"commitlint-plugin-function-rules": "^4.0.1",
 		"cspell": "^8.17.1",
 		"drizzle-kit": "^0.22.0",
 		"eslint": "^9.16.0",
