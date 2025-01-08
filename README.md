@@ -14,12 +14,13 @@ This project only contains example configuration files - it is not a project for
 - **[CSpell](https://github.com/streetsidesoftware/cspell)**: Spell Checker for Code.
 - **[Commitlint](https://commitlint.js.org/)**: To enforce conventional commit messages.
 - **[NPM check updates](https://www.npmjs.com/package/npm-check-updates)**: For updating your package.json dependencies to the latest versions.
+- **[HTTP Status Codes](https://www.npmjs.com/package/http-status-codes)**: Constants enumerating the HTTP status codes.
 
 # Installation
 ## Tools
 ### For Windows (if you want other look in source)
 ```
-npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional commitlint-plugin-function-rules npm-check-updates stylelint stylelint-config-standard
+npm install --save-dev eslint typescript prettier husky lint-staged cspell commitlint @commitlint/cli @commitlint/config-conventional commitlint-plugin-function-rules npm-check-updates stylelint stylelint-config-standard http-status-codes
 ```
 
 ## [Eslint plugins](https://github.com/Lenerystia/eslint-ultimate-config) <- (If you want list of all plugins, go here)

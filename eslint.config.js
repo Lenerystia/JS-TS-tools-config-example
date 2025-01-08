@@ -13,7 +13,7 @@ import esEs from 'eslint-plugin-eslint-plugin';
 import functional from 'eslint-plugin-functional';
 import esImport from 'eslint-plugin-import';
 import alias from 'eslint-plugin-import-alias';
-import node from 'eslint-plugin-node';
+import node from 'eslint-plugin-n';
 import perfectionist from 'eslint-plugin-perfectionist';
 import promise from 'eslint-plugin-promise';
 import security from 'eslint-plugin-security';
@@ -25,14 +25,14 @@ import unicorn from 'eslint-plugin-unicorn';
 import svelteParser from 'svelte-eslint-parser';
 
 // Toggles for enabling/disabling rule groups
-const perfectionistFlag = false;
+const perfectionistFlag = true;
 const svelteFlag = true;
-const typescriptFlag = false;
+const typescriptFlag = true;
 const unicornFlag = false;
 const stylisticFlag = false;
 const jsFlag = false;
 const vitestFlag = false;
-const tsDocFlag = false;
+const tsDocFlag = true;
 const esImportFlag = false;
 const functionalFlag = false;
 const securityFlag = false;
@@ -40,13 +40,13 @@ const sonarjsFlag = false;
 const aliasFlag = false;
 const htmlFlag = false;
 const esEsFlag = false;
-const promiseFlag = false;
+const promiseFlag = true;
 const drizzleFlag = false;
-const prettierFlag = false;
-const nodeFlag = false;
+const prettierFlag = true;
+const nodeFlag = true;
 const pandacssFlag = false;
 const tailwindFlag = false;
-const cspellFlag = false;
+const cspellFlag = true;
 
 export default [
 	prettier,
@@ -62,7 +62,9 @@ export default [
 			'eslint.config.js',
 			'drizzle.config.ts',
 			'commitlint.config.js',
-			'vitest.config.js'
+			'vitest.config.js',
+			'src/routes/sandbox/**',
+			'tests/**'
 		],
 		languageOptions: {
 			parser: svelteParser,
@@ -105,8 +107,45 @@ export default [
 				'cspell/spellchecker': 'warn'
 			}),
 			...(nodeFlag && {
-				// ...node.configs.recommended.rules,
-				...node.configs['recommended-script'].rules
+				'node/callback-return': 'error',
+				'node/exports-style': ['error', 'exports'],
+				'node/file-extension-in-import': 'off',
+				'node/global-require': 'error',
+				'node/handle-callback-err': 'error',
+				'node/hashbang': 'error',
+				'node/no-callback-literal': 'error',
+				'node/no-deprecated-api': 'error',
+				'node/no-exports-assign': 'error',
+				'node/no-extraneous-import': 'error',
+				'node/no-extraneous-require': 'error',
+				'node/no-hide-core-modules': 'off',
+				'node/no-missing-import': 'off', // TODO
+				'node/no-missing-require': 'error',
+				'node/no-mixed-requires': 'error',
+				'node/no-new-require': 'error',
+				'node/no-path-concat': 'error',
+				'node/no-process-env': 'off',
+				'node/no-process-exit': 'off',
+				'node/no-restricted-import': 'off',
+				'node/no-restricted-require': 'off',
+				'node/no-sync': 'warn',
+				'node/no-unpublished-bin': 'error',
+				'node/no-unpublished-import': 'error',
+				'node/no-unpublished-require': 'error',
+				'node/no-unsupported-features/es-builtins': 'error',
+				'node/no-unsupported-features/es-syntax': 'error',
+				'node/no-unsupported-features/node-builtins': 'off', // TODO
+				"node/prefer-global/buffer": ["error", "always"],
+				"node/prefer-global/console": ["error", "always"],
+				"node/prefer-global/process": ["error", "always"],
+				"node/prefer-global/text-decoder": ["error", "always"],
+				"node/prefer-global/text-encoder": ["error", "always"],
+				"node/prefer-global/url": ["error", "always"],
+				"node/prefer-global/url-search-params": ["error", "always"],
+				'node/prefer-node-protocol': 'error',
+				'node/prefer-promises/dns': 'error',
+				'node/prefer-promises/fs': 'error',
+				'node/process-exit-as-throw': 'error'
 			}),
 			/* Svelte rules */
 			...(svelteFlag && {
@@ -179,7 +218,7 @@ export default [
 				'promise/no-return-wrap': 'error',
 				'promise/param-names': 'error',
 				'promise/catch-or-return': 'error',
-				'promise/no-native': 'error',
+				'promise/no-native': 'off',
 				'promise/no-nesting': 'error',
 				'promise/no-promise-in-callback': 'error',
 				'promise/no-callback-in-promise': 'error',
@@ -760,7 +799,7 @@ export default [
 				'max-params': 'off',
 				'@typescript-eslint/max-params': ['error', { max: 4 }],
 				'init-declarations': 'off',
-				'@typescript-eslint/init-declarations': ['error', 'never', { ignoreForLoopInit: true }],
+				'@typescript-eslint/init-declarations': ['error', 'always', { ignoreForLoopInit: true }],
 
 				'@typescript-eslint/member-ordering': 'off',
 				'@typescript-eslint/naming-convention': 'off',
