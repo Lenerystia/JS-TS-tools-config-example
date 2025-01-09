@@ -16,7 +16,7 @@ This project only contains example configuration files - it is not a project for
 - **[NPM check updates](https://www.npmjs.com/package/npm-check-updates)**: For updating your package.json dependencies to the latest versions.
 - **[HTTP Status Codes](https://www.npmjs.com/package/http-status-codes)**: Constants enumerating the HTTP status codes.
 
-And a few others, but I haven't configured them yet, even though they're listed in package.json.
+And a few others, but I haven't set them up or documented them here yet, even though they're listed in package.json.
 
 # Installation
 ## Tools
