@@ -18,6 +18,13 @@ This project only contains example configuration files - it is not a project for
 
 And a few others, but I haven't set them up or documented them here yet, even though they're listed in package.json.
 
+"svelte-check": "^4.1.0",
+"vitest": "^2.0.4",
+"@types/d3-graphviz": "^2.6.10",
+"drizzle-kit": "^0.22.0",
+"@faker-js/faker": "^9.3.0",
+"drizzle-orm": "^0.31.2",
+
 # Installation
 ## Tools
 ### For Windows (if you want other look in source)
